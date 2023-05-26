@@ -19,13 +19,10 @@ class TxtBtn extends StatelessWidget {
         style: const TextStyle(fontSize: 12),
       ),
       style: ElevatedButton.styleFrom(
-        // ignore: prefer_const_constructors
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
         shape: const StadiumBorder(),
         padding: const EdgeInsets.all(14.0),
-
       ),
     );
   }
 }
-

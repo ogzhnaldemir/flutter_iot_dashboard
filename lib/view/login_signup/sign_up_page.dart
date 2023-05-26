@@ -1,13 +1,10 @@
-// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, sort_child_properties_last
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/button.dart';
 import 'package:flutter_app/components/text_field.dart';
-
 import 'package:flutter_app/view/login_signup/login_page.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +17,6 @@ class SignUpScreen extends StatelessWidget {
                 child: Center(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(0.0),
                       border: Border.all(
                         color: Colors.black,
                         width: 0.5,
@@ -36,8 +32,8 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Container(
-                            width: 1100,
-                            height: 1200,
+                            // width: 1100,
+                            //height: 1200,
                             decoration: BoxDecoration(
                               border: Border.all(
                                 color: const Color.fromARGB(255, 255, 255, 255),
@@ -59,6 +55,7 @@ class SignUpScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+                              const SizedBox(height: 30),
                               _header(context),
                               _inputFields(context),
                               _loginInfo(context),
@@ -72,66 +69,59 @@ class SignUpScreen extends StatelessWidget {
   }
 
   _header(context) {
-    return Column(
-      children: [
-        const SizedBox(height: 30),
-        SizedBox(
-          height: 80,
-          width: 200,
-          child: Image.asset(
-            'images/robit15.png',
-            fit: BoxFit.contain,
-          ),
-        ),
-      ],
+    return SizedBox(
+      height: 80,
+      width: 200,
+      child: Image.asset(
+        'images/robit15.png',
+        fit: BoxFit.contain,
+      ),
     );
   }
 
   _inputFields(context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(height: 30),
-          TxtFld(
-            hintText: "Kullanıcı Adı",
-            prefixIcon: Icons.person_rounded,
-          ),
-          const SizedBox(height: 10),
-          TxtFld(
-            hintText: "(5**)(***)(****)",
-            prefixIcon: Icons.phone,
-          ),
-          const SizedBox(height: 10),
-          TxtFld(
-            hintText: "E-Posta ",
-            prefixIcon: Icons.mail,
-          ),
-          const SizedBox(height: 10),
-          TxtFld(
-            hintText: "Şifre",
-            obscureText: true,
-            prefixIcon: Icons.lock,
-          ),
-          const SizedBox(height: 10),
-          TxtFld(
-            hintText: "Şifre Tekrar",
-            prefixIcon: Icons.lock,
-            obscureText: true,
-          ),
-          const SizedBox(height: 25),
-          TxtBtn(
-            text: "   Kaydol   ",
-            onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
-              
-            },
-          ),
-          const SizedBox(height: 50),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const SizedBox(height: 30),
+        TxtFld(
+          hintText: "Kullanıcı Adı",
+          prefixIcon: Icons.person_rounded,
+        ),
+        const SizedBox(height: 10),
+        TxtFld(
+          hintText: "(5**)(***)(****)",
+          prefixIcon: Icons.phone,
+        ),
+        const SizedBox(height: 10),
+        TxtFld(
+          hintText: "E-Posta ",
+          prefixIcon: Icons.mail,
+        ),
+        const SizedBox(height: 10),
+        TxtFld(
+          hintText: "Şifre",
+          obscureText: true,
+          prefixIcon: Icons.lock,
+        ),
+        const SizedBox(height: 10),
+        TxtFld(
+          hintText: "Şifre Tekrar",
+          prefixIcon: Icons.lock,
+          obscureText: true,
+        ),
+        const SizedBox(height: 25),
+        TxtBtn(
+          text: "   Kaydol   ",
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+        ),
+        const SizedBox(height: 50),
+      ],
     );
   }
 

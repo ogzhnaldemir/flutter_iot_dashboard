@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/about/feed_back/feed_back.dart';
-import 'package:latlng/latlng.dart';
+import 'package:latlng/latlng.dart' show LatLng;
 import 'package:map/map.dart';
 
-import '../../../constants/contans.dart';
+import 'package:flutter_app/constants/contans.dart';
 
 class AboutPage extends StatelessWidget {
   final controller = MapController(

@@ -27,8 +27,8 @@ class _BtnState extends State<Btn> {
   }
 
   void navigateToPage(int index) {
-// Burada butona tıklandığında yönlendirilecek sayfanın kodunu yazabilirsiniz.
-// Örneğin Navigator.push ile yeni bir sayfaya geçebilirsiniz.
+    // Add your code here to navigate to the desired page when a button is clicked.
+    // For example, you can use Navigator.push to navigate to a new page.
     print('Tıklanan buton: $index');
   }
 

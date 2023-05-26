@@ -10,5 +10,5 @@ class Constants {
     left: 500.0,
     right: 500.0,
   );
-  static const Sizeb = SizedBox(height: 10);
+  static const SizeB = SizedBox(height: 10);
 }

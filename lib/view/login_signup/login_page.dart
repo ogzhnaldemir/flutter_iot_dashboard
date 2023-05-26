@@ -6,12 +6,6 @@ import 'package:flutter_app/view/login_signup/sign_up_page.dart';
 import '../main_menu/menu.dart';
 import 'package:flutter_app/view/password_operations/password.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: LoginPage(),
-  ));
-}
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -66,7 +60,7 @@ class LoginPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _header(context),
+                        _header(),
                         _inputField(context),
                         _forgotPassword(context),
                         _signup(context),
@@ -86,7 +80,7 @@ class LoginPage extends StatelessWidget {
         )));
   }
 
-  _header(context) {
+  _header() {
     return Column(
       children: [
         SizedBox(
@@ -97,11 +91,6 @@ class LoginPage extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        /* SizedBox(height: 20),
-          Text(
-            "Hoşgeldiniz ",
-            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-          ),*/
         const SizedBox(
           height: 40.0,
         )
@@ -133,16 +122,6 @@ class LoginPage extends StatelessWidget {
             );
           },
         ),
-
-        /* ogz_text_button(
-        text: "Hakkımızda",
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AboutPage()),
-          );
-        },
-      ),*/
         const SizedBox(height: 50),
       ],
     );
@@ -183,7 +162,7 @@ class LoginPage extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SignUpScreen()),
+              MaterialPageRoute(builder: (context) => const SignUpPage()),
             );
           },
           child: const Text(
