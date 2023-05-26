@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
 
-class ButtonAddModel{
+class ButtonAddModel {
   String text = "";
-
-
-  
 }

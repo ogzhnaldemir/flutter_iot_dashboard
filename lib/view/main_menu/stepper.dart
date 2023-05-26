@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/text_field.dart';
-
 import 'package:flutter_app/controller/menu_controller.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_app/controller/btn_add.dart';
-
-
 
 class CustomStepper extends StatefulWidget {
   const CustomStepper(
@@ -21,7 +18,6 @@ class CustomStepper extends StatefulWidget {
 class _CustomStepperState extends State<CustomStepper> {
   int _currentStep = 0;
   TextEditingController textEditingController = TextEditingController();
-
   Color pickerColor = const Color.fromARGB(255, 251, 255, 4);
   Color currentColor = const Color.fromARGB(255, 0, 0, 0);
   void changeColor(Color color) {
@@ -40,12 +36,6 @@ class _CustomStepperState extends State<CustomStepper> {
           colorScheme: const ColorScheme.dark(
             primary: Colors.green,
           ),
-
-          /*  canvasColor: Colors.yellow,
-          colorScheme: Theme.of(context).colorScheme.copyWith(
-                primary: Colors.green,
-                background: Colors.red,
-                secondary: Colors.green,)*/
         ),
         child: Stepper(
           type: StepperType.horizontal,
@@ -112,8 +102,25 @@ class _CustomStepperState extends State<CustomStepper> {
                       });
                     },
                   ),
-                  const SizedBox(height: 30),
-                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    child: const Text('Güncelle'),
+                    onPressed: () {
+                      setState(() {
+                        String text = widget.providerNoListen.globalModel.text;
+                        widget.providerNoListen.setButton(AddButton(
+                          text: text,
+                          isSelected: true,
+                          onPressed: () => "hello",
+                          onTextChanged: (value) {
+                            // Update the button text when onChanged is called
+                            setState(() {
+                              text = value;
+                            });
+                          },
+                        ));
+                      });
+                    },
+                  ),
                 ],
               ),
             ),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_app/controller/menu_controller.dart';
 import 'package:flutter_app/view/main_menu/stepper.dart';
-
 import 'package:provider/provider.dart';
 import 'package:side_sheet/side_sheet.dart';
 import 'package:flutter_app/controller/btn_add.dart';
@@ -100,29 +98,26 @@ class _AnaMenuContentState extends State<AnaMenuContent> {
                                 children: [
                                   IconButton(
                                     onPressed: () {
-                                      Provider.of<MainMenuController>(context,
-                                              listen: false)
-                                          .setGlobalText(btn.text);
+                                      SideSheet.right(
+                                        context: context,
+                                        body: Container(
+                                          color: const Color.fromARGB(
+                                              255, 65, 64, 64),
+                                          child: CustomStepper(
+                                            providerNoListen:
+                                                Provider.of<MainMenuController>(
+                                                    context,
+                                                    listen: false),
+                                            parentContext: context,
+                                          ),
+                                        ),
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.3,
+                                      );
                                     },
                                     icon: const Icon(Icons.edit),
                                   ),
-                                  /*
-
-                                      IconButton(
-                                        onPressed: () {
-                                          SideSheet.right(
-                                            context: context,
-                                            body: CustomStepper(
-                                              providerNoListen: Provider.of<MainMenuController>(context, listen: false),
-                                              parentContext: context,
-                                            ),
-                                            width: MediaQuery.of(context).size.width * 0.3,
-                                          );
-                                        },
-                                        icon: Icon(Icons.edit),
-                                      ),
-
-                                                                        */
                                   IconButton(
                                     onPressed: () {
                                       setState(() {
@@ -149,4 +144,3 @@ class _AnaMenuContentState extends State<AnaMenuContent> {
     );
   }
 }
-
